@@ -17,17 +17,17 @@ int main(void)
 		else
 		{
 			if (n == 10)
-				c = 'A';
+				c = 'a';
 			else if (n == 11)
-				c = 'B';
+				c = 'b';
 			else if (n == 12)
-				c = 'C';
+				c = 'c';
 			else if (n == 13)
-				c = 'D';
+				c = 'd';
 			else if (n == 14)
-				c = 'E';
+				c = 'e';
 			else if (n == 15)
-				c = 'F';
+				c = 'f';
 		}
 		putchar(c);
 		n++;
