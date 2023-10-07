@@ -22,10 +22,10 @@ int main(void)
 
 	if (r > 5)
 		printf("Last digit of %d is %d and is greater than 5\n", n, r);
-	else if (reminder < 6 && reminder != 0)
+	else if (r < 6 && reminder != 0)
 		printf("Last digit of %d is %d and is less than 6 and not 0\n",
 		       n, r);
 	else
-		printf("Last digit of %d is %d and is 0\n", n, reminder);
+		printf("Last digit of %d is %d and is 0\n", n, r);
 	return (0);
 }
