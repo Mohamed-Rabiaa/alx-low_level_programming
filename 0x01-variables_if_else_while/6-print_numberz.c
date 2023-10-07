@@ -8,12 +8,9 @@ int main(void)
 {
 	int n = 0;
 
-	char c;
-
 	while (n < 10)
 	{
-		c = '0' + n;
-		putchar(c);
+		putchar('0' + n);
 		n++;
 	}
 	putchar('\n');
