@@ -30,6 +30,7 @@ int main(void)
 				c = 'F';
 		}
 		putchar(c);
+		n++;
 	}
 	putchar('\n');
 	return (0);
