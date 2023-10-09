@@ -16,16 +16,12 @@ int main(void)
 
 		while (n2 < 100)
 		{
-			if (n1 < 10)
-				putchar('0');
-			putchar('0' + n1 / 10);
+			putchar((n1 < 10 ? '0' : '0' + n1 / 10));
 			putchar('0' + n1 % 10);
 			putchar(' ');
-			if (n2 < 10)
-				putchar('0');
-			putchar('0' + n2 / 10);
+			putchar((n2 < 10 ? '0' : '0' + n2 / 10));
 			putchar('0' + n2 % 10);
-			if (n1 != 98 && n2 == 99)
+			if (n1 != 98 || n2 != 99)
 			{
 				putchar(',');
 				putchar(' ');
