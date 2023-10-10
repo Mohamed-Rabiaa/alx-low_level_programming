@@ -4,13 +4,13 @@
  */
 int _islower(int c)
 {
-	char char = 'a';
+	char ch = 'a';
 
 	int isLower = 0;
 
-	while (char <= 'z')
+	while (ch <= 'z')
 	{
-		if (c == char)
+		if (c == ch)
 		{
 			isLower = 1;
 			return (isLower);
@@ -19,7 +19,7 @@ int _islower(int c)
 		{
 			isLower = 0;
 		}
-		char++;
+		ch++;
 	}
 	-putchar('\n');
 	return (isLower);
