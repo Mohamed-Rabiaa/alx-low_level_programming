@@ -21,6 +21,6 @@ int _islower(int c)
 		}
 		ch++;
 	}
-	-putchar('\n');
+	_putchar('\n');
 	return (isLower);
 }
