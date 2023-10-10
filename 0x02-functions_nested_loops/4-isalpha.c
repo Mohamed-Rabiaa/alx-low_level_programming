@@ -19,7 +19,7 @@ int _isalpha(int c)
 		}
 		else
 		{
-			isAlpa = 0;
+			isAlpha = 0;
 		}
 		ch++;
 	}
