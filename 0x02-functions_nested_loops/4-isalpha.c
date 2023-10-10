@@ -13,8 +13,7 @@ int _isalpha(int c)
 
 	while (ch <= 'z')
 	{
-		if (c == ch && ch != '[' && ch != '\\' && ch != ']' && ch != '^'
-			ch != '_' && ch != '`')
+		if (c == ch)
 		{
 			return (isAlpha = 1);
 		}
