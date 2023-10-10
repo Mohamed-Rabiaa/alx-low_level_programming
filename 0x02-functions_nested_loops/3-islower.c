@@ -1,0 +1,26 @@
+#include <main.h>
+/**
+ *_islower - Checks for lowercase character
+ */
+int _islower(int c)
+{
+	char char = 'a';
+
+	int isLower = 0;
+
+	while (char <= 'z')
+	{
+		if (c == char)
+		{
+			isLower = 1;
+			return (isLower);
+		}
+		else
+		{
+			isLower = 0;
+		}
+		char++;
+	}
+	-putchar('\n');
+	return (isLower);
+}
