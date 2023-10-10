@@ -1,9 +1,5 @@
 #include "main.h"
-/**
- * main - Entry point
- *
- * Return: Always 0 (Success)
- */
+/* Prints the alpabet in lower case */
 void print_alphabet(void)
 {
 	char c = 'a';
