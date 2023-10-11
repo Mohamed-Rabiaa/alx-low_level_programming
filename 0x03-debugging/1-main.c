@@ -14,9 +14,9 @@ int main(void)
 	i = 0;
 
 	while (i < 10)
-	{
 		putchar(i);
-	}
+	
+	/*This will cause the outpt to go into an infinite loop*/
 
 	printf("Infinite loop avoided! \\o/\n");
 
