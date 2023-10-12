@@ -10,19 +10,13 @@ int _isupper(int c)
 {
 	char ch = 'A';
 
-	int isUpper = 0;
-
 	while (ch < 'Z')
 	{
 		if (c == ch)
 		{
-			isUpper = 1;
-		}
-		else
-		{
-			isUpper = 0;
+			return (1);
 		}
 		ch++;
 	}
-	return (isUpper);
+	return (0);
 }
