@@ -7,15 +7,15 @@
  */
 int _isdigit(int c)
 {
-	int i = 0;
+	char ch  = '0';
 
-	while (i < 10)
+	while (ch < 10 + '0')
 	{
-		if (c == i)
+		if (c == ch)
 		{
 			return (1);
 		}
-		i++;
+		ch++;
 	}
 	return (0);
 }
