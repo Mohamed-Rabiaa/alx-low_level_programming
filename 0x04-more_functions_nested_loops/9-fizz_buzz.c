@@ -5,7 +5,7 @@
  * and for the multiples of five print Buzz.
  * For numbers which are multiples of both three and five print FizzBuzz.
  */
-void print_fizz_buzz(void)
+int main(void)
 {
 	for (int i = 1; i <= 100; i++)
 	{
