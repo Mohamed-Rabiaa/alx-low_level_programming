@@ -24,13 +24,13 @@ void print_times_table(int n)
 			{
 				res = i * j;
 
-				if (res < 10 && j != n)
+				if (res < 10)
 				{
 					_putchar('0' + res);
 					_putchar(',');
 					_putchar(' ');
 				}
-				else if (res > 10 && j != n)
+				else if (res > 10)
 				{
 					_putchar('0' + res / 10);
 					_putchar('0' + res % 10);
