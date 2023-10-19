@@ -21,19 +21,15 @@ int _strcmp(char *s1, char *s2)
 			n = 0;
 		else if (s1[i] < s2[i])
 		{
-			n = -15;
+			n = (int)(s1[i] - s2[i]);
 			break;
 		}
 		else
 		{
-			n = 15;
+			n = (int)(s1[i] - s2[i]);
 			break;
 		}
 		i++;
 	}
-	if (n == 0 && s1[i] == '\0' && s2[i] != '\0')
-		n = -15;
-	else if (n == 0 && s1[i] != '\0' && s2[i] == '\0')
-		n = 15
 	return (n);
 }
