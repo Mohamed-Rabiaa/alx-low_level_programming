@@ -5,21 +5,23 @@
  */
 void print_number(int n)
 {
-	int r = 0;
+	long long int r = 0;
 
-	if (n < 0)
+	long long int num = n;
+
+	if (num < 0)
 	{
 		_putchar('-');
 		n = -n;
 	}
-	if (n == 0)
+	if (num == 0)
 		_putchar('0');
 	else
 	{
-		while (n > 0)
+		while (num > 0)
 		{
-			r = (n % 10) + (r * 10);
-			n = n / 10;
+			r = (num % 10) + (r * 10);
+			num = num / 10;
 		}
 		while (r > 0)
 		{
