@@ -5,7 +5,6 @@
  */
 void print_number(int n)
 {
-	int i;
 
 	int r = 0;
 
@@ -14,17 +13,19 @@ void print_number(int n)
 		_putchar('-');
 		n = -n;
 	}
-	while (n >= 0)
+	else if (n == 0)
+		_putchar('0');
+	else
 	{
-		if (n <= 9)
-		{
-			_putchar(n + '0');
-			n = r;
-		}
-		else
+		while (n > 0)
 		{
 			r = (n % 10) + r;
 			n = n / 10;
+		}
+		while (r > 0)
+		{
+			_putchar((r % 10) + '0');
+			r = r / 10;
 		}
 	}
 }
