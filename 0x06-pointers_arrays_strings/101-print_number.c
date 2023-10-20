@@ -19,7 +19,7 @@ void print_number(int n)
 	{
 		while (n > 0)
 		{
-			r = (n % 10) + r;
+			r = (n % 10) + r * 10;
 			n = n / 10;
 		}
 		while (r > 0)
