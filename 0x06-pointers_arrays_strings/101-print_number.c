@@ -6,28 +6,19 @@
  */
 void print_number(int n)
 {
-	int r = 0;
+	unsigned int num;
 
-	unsigned int num = n;
+	num = n;
 
-	if (num < 0)
+	if (n < 0)
 	{
 		_putchar('-');
-		num = -num;
+		num = -n;
 	}
-	if (num == 0)
-		_putchar('0');
-	else
+
+	if (num / 10 != 0)
 	{
-		while (num > 0)
-		{
-			r = (num % 10) + (r * 10);
-			num = num / 10;
-		}
-		while (r > 0)
-		{
-			_putchar((r % 10) + '0');
-			r = r / 10;
-		}
+		print_number(num / 10);
 	}
+	_putchar((num % 10) + '0');
 }
