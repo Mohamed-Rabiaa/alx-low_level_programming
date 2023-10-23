@@ -1,5 +1,5 @@
 /**
-*_strstr - locates a substring
+11;rgb:0000/0000/0000*_strstr - locates a substring
 *@haystack: a string
 *@needle: the substring that we are searching
 *
@@ -32,7 +32,7 @@ char *_strstr(char *haystack, char *needle)
 	}
 
 	if (*p2 == '\0')
-		return ((char *)p1Adv);
+		return ((char *)p1);
 	else
 		return (0);
 }
