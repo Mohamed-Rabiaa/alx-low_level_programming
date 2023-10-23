@@ -21,7 +21,7 @@ unsigned int _strspn(char *s, char *accept)
 		{
 			if (s[i] == accept[j])
 			{
-				lenth++;
+				length++;
 				endofaccept = 0;
 			}
 			else
