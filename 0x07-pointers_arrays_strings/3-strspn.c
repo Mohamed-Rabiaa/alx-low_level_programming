@@ -13,7 +13,7 @@ unsigned int _strspn(char *s, char *accept)
 
 	unsigned int length = 0;
 
-	int endofaccept = 0;
+	int found = 0;
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
@@ -21,14 +21,14 @@ unsigned int _strspn(char *s, char *accept)
 		{
 			if (s[i] == accept[j])
 			{
-				length++;
-				endofaccept = 0;
+				found = 1;
+				break;
 			}
-			else
-				endofaccept = 1;
 		}
-		if (endofaccept)
-			return (length);
+		if (!found)
+			break;
+		else
+			length++;
 	}
 	return (length);
 }
