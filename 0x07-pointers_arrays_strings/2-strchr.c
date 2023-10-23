@@ -16,5 +16,5 @@ char *_strchr(char *s, char c)
 		if (c == s[i] || c == s[i] + 32)
 			return (s + i);
 	}
-	return NULL;
+	return (NULL);
 }
