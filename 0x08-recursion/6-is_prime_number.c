@@ -1,0 +1,27 @@
+/**
+ *check_prime - checks if the given number is prime
+ *@n: the given number
+ *@val: a divisor
+ *
+ *Return: 1 if the input integer is a prime number, otherwise return 0.
+ */
+int check_prime(int n, int val)
+{
+	if ((n != 2 && n % val == 0) || val > n)
+		return (0);
+	if (val <= n / 2)
+		return (check_prime(n, val + 1));
+	else
+		return (1);
+}
+
+/**
+ *is_prime_number - checks if the given number is prime
+ *@n: the given number
+ *
+ *Return: 1 if the input integer is a prime number, otherwise return 0.
+ */
+int is_prime_number(int n)
+{
+	return (check_prime(n, 2));
+}
