@@ -11,6 +11,14 @@ int _sqrt_recursion(int n)
 	return (square(n, 1));
 }
 
+/**
+ *square - calcualtes the square root of the given number using guesses
+ *@n: the given number
+ *@guess: the guess of the square root
+ *
+ *Return: the square root of the given number or -1 if the number
+ *doesn't have a square root.
+ */
 int square(int n, int guess)
 {
 	if (guess * guess == n)
