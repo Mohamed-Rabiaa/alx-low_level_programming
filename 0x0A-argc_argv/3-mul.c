@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 /**
  * main - check the code
  *@argc: the number of arguments passed to main
@@ -17,9 +18,9 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-		product = argv[1] * argv[2];
+		product = atoi(argv[1]) * atoi(argv[2]);
 
-		pritf("%d", product);
+		printf("%d", product);
 	}
 	return (0);
 }
