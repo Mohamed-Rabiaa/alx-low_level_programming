@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 /**
  * main - check the code
  *@argc: the number of arguments passed to main
@@ -15,16 +16,21 @@ int main(int argc, char *argv[])
 	{
 		for (i = 1; i < argc; i++)
 		{
-			num = atoi(argv[i]);
-
-			if (num != 0)
+			if (strcmp(argv[i], "0") == 0)
 			{
-				sum += num;
+				sum += 0;
 			}
 			else
 			{
-				printf("Error\n");
-				return (1);
+				num = atoi(argv[i]);
+
+				if (num != 0)
+					sum += num;
+				else
+				{
+					printf("Error\n");
+					return (1);
+				}
 			}
 		}
 	}
