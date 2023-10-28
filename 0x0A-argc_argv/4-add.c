@@ -1,6 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include <ctype.h>
+
+/**
+ *is_numeric - checks of a given string is a number
+ *@s: a string
+ *
+ *Return: 1 if the string is a number, 0 otherwise
+ */
+int is_numeric(char *s)
+{
+	while (*s != '\0')
+	{
+		if (!isdigit(*s))
+			return (0);
+		s++;
+	}
+	return (1);
+}
+
 /**
  * main - check the code
  *@argc: the number of arguments passed to main
@@ -16,22 +34,13 @@ int main(int argc, char *argv[])
 	{
 		for (i = 1; i < argc; i++)
 		{
-			if (strcmp(argv[i], "0") == 0)
+			if (!is_numeric(argv[i]))
 			{
-				sum += 0;
+				printf("Error\n");
+				return (1);
 			}
-			else
-			{
-				num = atoi(argv[i]);
-
-				if (num > 0)
-					sum += num;
-				else
-				{
-					printf("Error\n");
-					return (1);
-				}
-			}
+			num = atoi(argv[i]);
+			sum += num;
 		}
 	}
 	printf("%d\n", sum);
