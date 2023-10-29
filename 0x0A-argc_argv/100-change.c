@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 /**
  * main - check the code
  *@argc: the number of arguments passed to main
@@ -21,18 +22,13 @@ int main(int argc, char *argv[])
 	{
 		cents = atoi(argv[1]);
 
-		if (cents < 0)
-			printf("0\n");
-		else
+		for (i = 0; i < 5; i++)
 		{
-			for (i = 0; i < 5; i++)
-			{
-				coinsnumber += cents / coinstype[i];
-				cents = cents % coinstype[i];
+			coinsnumber += cents / coinstype[i];
+			cents = cents % coinstype[i];
 
-				if (cents % coinstype[i] == 0)
-					break;
-			}
+			if (cents % coinstype[i] == 0)
+				break;
 		}
 		printf("%d\n", coinsnumber);
 	}
