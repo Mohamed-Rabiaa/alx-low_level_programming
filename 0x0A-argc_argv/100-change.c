@@ -22,13 +22,17 @@ int main(int argc, char *argv[])
 	{
 		cents = atoi(argv[1]);
 
-		for (i = 0; i < 5; i++)
+		if (cents < 0)
+			coinsnumber = 0;
+		else
 		{
-			coinsnumber += cents / coinstype[i];
-			cents = cents % coinstype[i];
-
-			if (cents % coinstype[i] == 0)
-				break;
+			for (i = 0; i < 5; i++)
+			{
+				coinsnumber += cents / coinstype[i];
+				cents = cents % coinstype[i];
+				if (cents % coinstype[i] == 0)
+					break;
+			}
 		}
 		printf("%d\n", coinsnumber);
 	}
