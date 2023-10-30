@@ -9,7 +9,7 @@ I*Return: a pointer to the copy of the string that is saved in the
 */
 char *_strdup(char *str)
 {
-	int i = 0, size;
+	int i = 0, size = 0;
 
 	char *ptr;
 
