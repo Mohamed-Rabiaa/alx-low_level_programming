@@ -35,9 +35,9 @@ char *str_concat(char *s1, char *s2)
 
 	int size2 = _strlen(s2);
 
-	int strsize = size1 + size2 + 1;
+	int strsize = size1 + size2;
 
-	str = malloc(strsize * sizeof(char));
+	str = malloc((strsize * sizeof(char)) + 1);
 
 	if (str == 0)
 		return (0);
@@ -46,6 +46,7 @@ char *str_concat(char *s1, char *s2)
 		if (s1[i] != '\0')
 			str[i] = s1[i];
 		else
+			i = 0;
 			str[i] = s2[i];
 	}
 	str[i] = '\0';
