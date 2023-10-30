@@ -1,5 +1,18 @@
 #include <stdlib.h>
-#include "main.h"
+/**
+ *_strlen - returns the length of a given string
+ *@s: a string
+ *
+ *Return: the length of the string
+ */
+int _strlen(char *s)
+{
+	int i = 0;
+
+	while (s[i] != '\0')
+		i++;
+	return (i);
+}
 /**
  *_strdup -  returns a pointer to a newly allocated space in memory,
  *which contains a copy of the string given as a parameter
