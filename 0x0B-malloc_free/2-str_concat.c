@@ -29,7 +29,7 @@ char *str_concat(char *s1, char *s2)
 {
 	char *str;
 
-	int i;
+	int i, j = 0;
 
 	int size1 = _strlen(s1);
 
@@ -47,8 +47,8 @@ char *str_concat(char *s1, char *s2)
 			str[i] = s1[i];
 		else
 		{
-			i = 0;
-			str[i] = s2[i];
+			str[i] = s2[j];
+			j++;
 		}
 	}
 	str[i] = '\0';
