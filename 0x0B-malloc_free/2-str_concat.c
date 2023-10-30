@@ -46,8 +46,10 @@ char *str_concat(char *s1, char *s2)
 		if (s1[i] != '\0')
 			str[i] = s1[i];
 		else
+		{
 			i = 0;
 			str[i] = s2[i];
+		}
 	}
 	str[i] = '\0';
 	return (str);
