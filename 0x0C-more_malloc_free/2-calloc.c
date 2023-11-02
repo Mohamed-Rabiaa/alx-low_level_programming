@@ -1,3 +1,4 @@
+#include <stdlib.h>
 /**
  *_calloc - allocates memory for an array
  *@nmemb: the number of elements inside the array
