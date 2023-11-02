@@ -1,3 +1,4 @@
+#include <stdlib.h>
 /**
  *malloc_checked - Returns a pointer to the allocated memory
  *@b: the number of bytes to be allocated
@@ -9,7 +10,7 @@ void *malloc_checked(unsigned int b)
 {
 	void *ptr = malloc(b);
 
-	if (!ptr)
+	if (ptr == NULL)
 	{
 		exit(98);
 	}
