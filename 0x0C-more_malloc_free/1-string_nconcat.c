@@ -9,7 +9,7 @@ unsigned int _strlen(char *str)
 {
 	int i;
 
-	unsigned int length;
+	unsigned int length = 0;
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
