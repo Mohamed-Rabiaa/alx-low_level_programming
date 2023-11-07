@@ -1,6 +1,11 @@
 #ifndef DOG_H_
 #define DOG_H_
-typedef dog dog_t
+
+/**
+ *dog_t - a new name for the type struct dog.
+ */
+
+typedef dog dog_t;
 
 /**
  *struct dog - This is dog struct
