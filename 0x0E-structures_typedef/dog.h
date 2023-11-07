@@ -1,6 +1,6 @@
 #ifndef DOG_H_
 #define DOG_H_
-#define dog dog_t
+typedef dog dog_t
 
 /**
  *struct dog - This is dog struct
