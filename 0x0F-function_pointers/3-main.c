@@ -32,16 +32,10 @@ int main(int argc, char *argv[])
 			printf("Error\n");
 			exit(99);
 		}
-		else
-		{
-			res = ptr(num1, num2);
-			printf("%d\n", res);
-		}
+		res = ptr(num1, num2);
+		printf("%d\n", res);
 	}
-	else
-	{
-		printf("Error\n");
-		exit(98);
-	}
+	printf("Error\n");
+	exit(98);
 	return (0);
 }
