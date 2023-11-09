@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 		if (num2 == 0 && (strcmp(argv[2], "/") == 0
 				  || strcmp(argv[2], "%") == 0))
 		{
-			printrf("Error\n");
+			printf("Error\n");
 			exit(100);
 		}
 		ptr = get_op_func(argv[2]);
