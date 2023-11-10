@@ -7,16 +7,13 @@
 void print_all(const char * const format, ...)
 {
 	int i = 0;
-
 	char *s, *sep = "";
-
 	va_list args;
 
 	va_start(args, format);
 
 	if (format)
 	{
-
 		while (format[i])
 		{
 			switch (format[i])
@@ -34,7 +31,6 @@ void print_all(const char * const format, ...)
 				s = va_arg(args, char *);
 				if (s == NULL)
 					s = "(nil)";
-
 				printf("%s%s", sep, s);
 				break;
 			default:
