@@ -1,5 +1,21 @@
 #include <stdlib.h>
-#include <math.h>
+/**
+ *_pow - returns the res of n raised to the power of p
+ *@n: the integer
+ *@p: the power
+ *
+ *Return: the res of n raised to the power of p
+ */
+unsigned int _pow(int n, int p)
+{
+	int i;
+	unsigned int res = 1;
+
+	for (i = 0; i < p; i++)
+		res *= n * n;
+
+	return (res);
+}
 /**
  *binary_to_uint - converts a binary number to an unsigned int
  *@b: a string of 0 and 1 chars
@@ -31,7 +47,7 @@ unsigned int binary_to_uint(const char *b)
 		{
 			r = n % 10;
 			n = n / 10;
-			res += r * (int) pow(2, power);
+			res += r *  _pow(2, power);
 			power++;
 		}
 	}
