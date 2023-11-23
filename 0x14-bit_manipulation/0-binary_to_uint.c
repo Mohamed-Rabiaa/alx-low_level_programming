@@ -10,10 +10,12 @@ unsigned int _pow(int n, int p)
 {
 	int i;
 
-	for (i = 0; i < p; i++)
-		n *= n;
+	unsigned int res = 1;
 
-	return (n);
+	for (i = 0; i < p; i++)
+		res *= n;
+
+	return (res);
 }
 /**
  *binary_to_uint - converts a binary number to an unsigned int
@@ -25,7 +27,7 @@ unsigned int _pow(int n, int p)
  */
 unsigned int binary_to_uint(const char *b)
 {
-	int i, n, r, length = 0, power = 0;
+	int i, length = 0, power = 0;
 
 	unsigned int res = 0;
 
@@ -38,17 +40,12 @@ unsigned int binary_to_uint(const char *b)
 			return (0);
 		length++;
 	}
-	n = atoi(b);
 
-	for (i = 0; i < length; i++)
+	for (i = length - 1; i >= 0; i--)
 	{
-		if (n != 0)
-		{
-			r = n % 10;
-			n = n / 10;
-			res += r *  _pow(2, power);
-			power++;
-		}
+		if (b[i] == '1')
+			res += _pow(2, power);
+		power++;
 	}
 	return (res);
 }
