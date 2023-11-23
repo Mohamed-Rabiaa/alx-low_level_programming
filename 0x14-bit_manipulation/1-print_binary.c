@@ -5,17 +5,22 @@
  */
 void print_binary(unsigned long int n)
 {
-	int i;
+	int i, count = 0;
 
-	long int mask = 10000000;
+	unsigned long int current;
 
-	for (i = 0; i <= 7; i++)
+	for (i = 63; i >= 0; i--)
 	{
-		if (n & mask)
-			_putchar('1');
-		else
-			_putchar('0');
+		current = n >> i;
 
-		mask >>= 1;
+		if (current & 1)
+		{
+			_putchar('1');
+			count++;
+		}
+		else if (count)
+			_putchar('0');
 	}
+	if (!count)
+		_putchar('0');
 }
