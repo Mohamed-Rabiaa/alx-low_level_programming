@@ -25,7 +25,7 @@ unsigned int _pow(int n, int p)
  */
 unsigned int binary_to_uint(const char *b)
 {
-	int i, n, r, length, power = 0;
+	int i, n, r, length = 0, power = 0;
 
 	unsigned int res = 0;
 
