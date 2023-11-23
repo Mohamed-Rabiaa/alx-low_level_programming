@@ -9,12 +9,11 @@
 unsigned int _pow(int n, int p)
 {
 	int i;
-	unsigned int res = 1;
 
 	for (i = 0; i < p; i++)
-		res *= n * n;
+		n *= n;
 
-	return (res);
+	return (n);
 }
 /**
  *binary_to_uint - converts a binary number to an unsigned int
