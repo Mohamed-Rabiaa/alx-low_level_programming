@@ -14,10 +14,5 @@ int get_bit(unsigned long int n, unsigned int index)
 
 	current = n >> index;
 
-	if (current & 1)
-		return (1);
-	else
-		return (0);
-
-	return (-1);
+	return (current & 1);
 }
