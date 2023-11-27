@@ -14,8 +14,6 @@ int create_file(const char *filename, char *text_content)
 
 	ssize_t n;
 
-	mode_t old_umask = umask(0);
-
 	char *temp = text_content;
 
 	if (!filename)
@@ -34,11 +32,9 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 
 	n = write(fd, text_content, tc_length);
-	if (n == -1)
+	if (n == -1 || n != tc_length)
 		return (-1);
 
 	close(fd);
-	umask(old_umask);
-
 	return (1);
 }
