@@ -10,7 +10,7 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	int fb, tc_length = 0;
+	int fd, tc_length = 0;
 
 	ssize_t n;
 
@@ -28,16 +28,16 @@ int create_file(const char *filename, char *text_content)
 		temp++;
 	}
 
-	fb = open(filename, O_CREAT | O_RDWR | O_EXCL, 0600);
+	fd = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
 
-	if (fb == -1)
+	if (fd == -1)
 		return (-1);
 
-	n = write(fb, text_content, tc_length);
+	n = write(fd, text_content, tc_length);
 	if (n == -1)
 		return (-1);
 
-	close(fb);
+	close(fd);
 	umask(old_umask);
 
 	return (1);
