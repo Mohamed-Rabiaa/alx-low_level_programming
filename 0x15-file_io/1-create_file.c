@@ -1,5 +1,6 @@
 #include <fcntl.h>
 #include <unistd.h>
+#include <sys/stat.h>
 /**
  *create_file - creates a file.
  *@filename: the name of the file to create
@@ -13,6 +14,8 @@ int create_file(const char *filename, char *text_content)
 
 	ssize_t n;
 
+	mode_t old_umask = umask(0);
+
 	if (!filename)
 		return (-1);
 
@@ -23,7 +26,7 @@ int create_file(const char *filename, char *text_content)
 		text_content++;
 	}
 
-	fb = open(filename, O_CREAT);
+	fb = open(filename, O_CREAT | O_RDWR | O_EXCL, 0600);
 
 	if (fb == -1)
 		return (-1);
@@ -31,6 +34,9 @@ int create_file(const char *filename, char *text_content)
 	n = write(fb, text_content, tc_length);
 	if (n == -1)
 		return (-1);
+
+	close(fb);
+	umask(old_umask);
 
 	return (1);
 }
