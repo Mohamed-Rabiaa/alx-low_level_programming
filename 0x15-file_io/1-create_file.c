@@ -31,9 +31,12 @@ int create_file(const char *filename, char *text_content)
 	if (fd == -1)
 		return (-1);
 
-	n = write(fd, text_content, tc_length);
-	if (n == -1 || n != tc_length)
-		return (-1);
+	if (text_content)
+	{
+		n = write(fd, text_content, tc_length);
+		if (n == -1 || n != tc_length)
+			return (-1);
+	}
 
 	close(fd);
 	return (1);
