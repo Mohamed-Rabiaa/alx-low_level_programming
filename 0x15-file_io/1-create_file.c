@@ -16,14 +16,16 @@ int create_file(const char *filename, char *text_content)
 
 	mode_t old_umask = umask(0);
 
+	char *temp = text_content;
+
 	if (!filename)
 		return (-1);
 
-	while (*text_content)
+	while (*temp)
 	{
 		tc_length++;
 
-		text_content++;
+		temp++;
 	}
 
 	fb = open(filename, O_CREAT | O_RDWR | O_EXCL, 0600);
@@ -31,7 +33,7 @@ int create_file(const char *filename, char *text_content)
 	if (fb == -1)
 		return (-1);
 
-	n = write(fb, text_content, tc_length);
+	n = write(fb, text_content, tc_length + 1);
 	if (n == -1)
 		return (-1);
 
