@@ -9,5 +9,8 @@
  */
 int main(int argc, char *argv[])
 {
+	int count = argc;
+
+	char **arr = argv;
 	return (0);
 }

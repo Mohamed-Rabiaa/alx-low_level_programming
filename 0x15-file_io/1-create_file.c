@@ -1,6 +1,5 @@
 #include <fcntl.h>
 #include <unistd.h>
-#include <sys/stat.h>
 /**
  *create_file - creates a file.
  *@filename: the name of the file to create
