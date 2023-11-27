@@ -14,6 +14,11 @@ int main(int argc, char *argv[])
 
 	char **arr = argv;
 
+	if (argc < 3)
+	{
+		exit(97);
+		dprintf("Usage: cp file_from file_to\n");
+	}
 	printf("%d %s", count, arr[1]);
 	return (0);
 }
