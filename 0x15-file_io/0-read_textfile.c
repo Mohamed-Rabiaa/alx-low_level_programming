@@ -10,11 +10,13 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t n_read, n_write;
+	ssize_t n_read, n_write, n;
 
 	int fd;
 
 	char *buffer = malloc((letters + 1) * sizeof(char));
+
+	n = letters;
 
 	if (!buffer)
 		return (0);
@@ -27,7 +29,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 
 	n_read = read(fd, buffer, letters);
-	if (n_read == -1 || n_read < letters)
+	if (n_read == -1 || n_read < n)
 		return (0);
 
 
