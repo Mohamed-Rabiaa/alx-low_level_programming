@@ -33,7 +33,7 @@ int create_file(const char *filename, char *text_content)
 	if (fb == -1)
 		return (-1);
 
-	n = write(fb, text_content, tc_length + 1);
+	n = write(fb, text_content, tc_length);
 	if (n == -1)
 		return (-1);
 
