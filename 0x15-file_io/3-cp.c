@@ -34,20 +34,28 @@ int main(int argc, char *argv[])
 			"Error: Can't read from file %s\n", file_from);
 		exit(98);
 	}
+	fd_write = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	if (fd_write == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
+		exit(99);
+	}
 
-	n_read = read(fd_read, buffer, BUFF_SIZE);
+	while ((n_read = read(fd_read, buffer, BUFF_SIZE)) > 0)
+	{
+		n_write = write(fd_write, buffer, n_read);
+		if (n_write == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n",
+				file_to);
+			exit(99);
+		}
+	}
 	if (n_read == -1)
 	{
 		dprintf(STDERR_FILENO,
 			"Error: Can't read from file %s\n", file_from);
 		exit(98);
-	}
-	fd_write = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	n_write = write(fd_write, buffer, n_read);
-	if (fd_write == -1 || n_write == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
-		exit(99);
 	}
 
 	fd_read_close = close(fd_read);
