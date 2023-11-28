@@ -42,9 +42,9 @@ int main(int argc, char *argv[])
 			"Error: Can't read from file %s\n", file_from);
 		exit(98);
 	}
-	fd_write = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 664);
-	n_write = dprintf(fd_write, "%s", buffer);
-	if (n_write == -1)
+	fd_write = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	n_write = write(fd_write, buffer, n_read);
+	if (fd_write == -1 || n_write == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 		exit(99);
