@@ -1,5 +1,0 @@
-CC = gcc
-SRCS := $(wildcard *.c)
-
-all: *.c
-	gcc *.c -o school
