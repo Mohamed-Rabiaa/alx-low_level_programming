@@ -55,21 +55,23 @@ int bnry_search(int *arr, int low, int high, int value)
  *@size: the number of elements in array
  *@value: the value to search for
  *
- *Return:
+ *Return: the first index where value is located
+ *or -1 if value is not present in array or array is NULL
  */
 int exponential_search(int *array, size_t size, int value)
 {
 	size_t i = 1;
+
 	if (!array)
 		return (-1);
 	if (array[0] == value)
 		return (0);
-	while(i < size && array[i] <= value)
+	while (i < size && array[i] <= value)
 	{
 		printf("Value checked array[%lu] = [%d]\n", i, array[i]);
 		i *= 2;
 	}
-	printf("Value found between indexes [%lu] and [%lu]\n", i/2,
+	printf("Value found between indexes [%lu] and [%lu]\n", i / 2,
 	       min(i, size - 1));
-	return (bnry_search(array, i/2, min(i, size - 1), value));
+	return (bnry_search(array, i / 2, min(i, size - 1), value));
 }
