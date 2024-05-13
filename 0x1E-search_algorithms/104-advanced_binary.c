@@ -45,11 +45,10 @@ int search(int *arr, int low, int high, int value)
 		if (arr[low] == value)
 			return (low);
 		mid = (low + high) / 2;
-		if (arr[mid] == value)
-			return (search(arr, low, mid, value));
 		if (arr[mid] < value)
 			return (search(arr, mid + 1, high, value));
-		return (search(arr, low, mid - 1, value));
+		else
+			return (search(arr, low, mid, value));
 	}
 	return (-1);
 }
